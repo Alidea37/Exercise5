@@ -29,7 +29,7 @@ public class Menu {
 							JOptionPane.PLAIN_MESSAGE, // creates the dialog box
 							null,
 							drinks,
-							" and extra porridge");
+							"Water");
 		
 					try
 					{

@@ -6,11 +6,11 @@ public class CreateFile {
 	public static void main (String[] args)
 	{
 		
-		Menu.drinkMenu();
+		//Menu.drinkMenu();
 		
+		//Menu.entreeMenu();
 		
-		Menu.entreeMenu();
+		//Menu.sideMenu();
 		
-		
-		Menu.sideMenu();
+		MenuOne.menuSelection();
 }}

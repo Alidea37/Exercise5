@@ -1,22 +1,15 @@
 package Exercise5;
 
-/*
-
-import javax.swing.JOptionPane;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.PrintWriter;
-import java.security.*;
+import javax.swing.JOptionPane;
 
+public class MenuOne {
 
-//Customizing button text
-// http://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html#input
-
-public class Menu {
-
-	public static void drinkMenu(){ 
+	
+	public static void menuSelection(){ 
 		{
 			File myoutfile = new File("Menu.txt"); // creates a file
 			FileOutputStream outFileStream;
@@ -33,33 +26,9 @@ public class Menu {
 							null,
 							drinks,
 							"Water");
-		
-					try
-					{
-					outFileStream = new FileOutputStream(myoutfile); // creates new outFile
-					PrintWriter outStream = new PrintWriter(outFileStream); // creates PrintWriter to write to file
-					
-						// Create a message displaying the order	
-						String message = String.format("You have selected %s.", beverage);
-						outStream.println("The user selected " +beverage+ ".");		
-						// display the message
-						JOptionPane.showMessageDialog(null,  message); 
 						
-						outStream.close();
-					}
-						catch(FileNotFoundException e){
-						e.printStackTrace();
-					
-						}
-							}
-								}
-	
-					
-		public static void entreeMenu()
-		{		
-			File myoutfile = new File("Menu.txt"); // creates a file
-			FileOutputStream outFileStream;
-			
+							
+				
 		// Create a second object array of main dishes
 			Object[] selections =  {"Porridge", "Steak", "Chicken", "Pork", "Fish", "Lamb", "Jumbo Shrimp", "Mexican Feed"};
 		// creates String for user's first selection	
@@ -73,32 +42,6 @@ public class Menu {
 					selections,
 					"Porridge");
 		
-			try
-			{
-			outFileStream = new FileOutputStream(myoutfile); // creates new outFile
-			PrintWriter outStream = new PrintWriter(outFileStream); // creates PrintWriter to write to file
-			
-				// Create a message displaying the order	
-				String message = String.format("You have selected %s.", order);
-				outStream.println("The user selected " +order+ ".");		
-				// display the message
-				JOptionPane.showMessageDialog(null,  message); 
-
-				outStream.close();
-			}
-			catch(FileNotFoundException e){
-			e.printStackTrace();
-		
-			}
-				}
-					
-		
-			
-		public static void sideMenu()
-		{	
-			File myoutfile = new File("Menu.txt"); // creates a file
-			FileOutputStream outFileStream;
-			
 		// Create a third object array of side dishes	
 			Object[] sides = {"extra porridge", "Steamed Vegetables", "Baked Potato Spuds", "Soup", "Salad", "Soup and Salad", "no sides"};
 		// Creates a string for user's second selection
@@ -118,8 +61,8 @@ public class Menu {
 			PrintWriter outStream = new PrintWriter(outFileStream); // creates PrintWriter to write to file
 			
 				// Create a message displaying the order	
-				String message = String.format("You have selected %s.", extras);
-				outStream.println("The user selected " +extras+ ".");		
+				String message = String.format("You have selected %s.", drinks + order + extras);
+				outStream.println("The user selected " +beverage+", "+order+", and "+extras+ ".");		
 				// display the message
 				JOptionPane.showMessageDialog(null,  message); 
 
@@ -131,6 +74,4 @@ public class Menu {
 			}
 				}
 					}
-
-**/
-
+						}

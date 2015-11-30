@@ -46,8 +46,7 @@ public class ReadMenu {
 					
 					// display record contents
 					System.out.printf(" %s", myscanner.next(), ".");
-					outStream.println("The order is %s" );
-					
+					outStream.printf("The order is %s%n", myscanner.next() );
 					
 					
 					if (outStream != null)

@@ -5,30 +5,22 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import javax.swing.JOptionPane;
+// code for drop down selection bar
+//http://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html
 
 public class MenuOne {
 
+	private static int countgame = 0;
 	
 	public static void menuSelection(){ 
 		{
 			File myoutfile = new File("Menu.txt"); // creates a file
 			FileOutputStream outFileStream;
-			
-		/*		// Create an object array of beverages	
-					Object[] drinks = {"Water", "Tea", "Milk", "Soda Fountain", "Coffee", "Margarita", "Beer", "Red Wine", "White Wine", "Whiskey"};
-				// Creates a string for user's second selection
-					String beverage = (String)JOptionPane.showInputDialog( // creates the drinks list
-							null,
-							"Please select a beverage from the menu:\n"
-							+ "~* Menu *~",
-							"Ye Olde Cafe", // title of Menu
-							JOptionPane.PLAIN_MESSAGE, // creates the dialog box
-							null,
-							drinks,
-							"Water");
-					**/	
-				
-					Object[] selections =  {"Porridge", "Steak", "Chicken", "Pork", "Fish", "Lamb", "Jumbo Shrimp", "Mexican Feed"};
+	
+			do
+			{
+					
+				Object[] selections =  {"Water", "Wine", "Coffee", "Tea", "Soda_Fountain", "Steak", "Chicken", "Pork", "Fish", "Lamb", "Jumbo_Shrimp", "Mexican_Feed", "Steamed_Vegetables", "Baked_Potato_Spuds", "Soup", "Salad"};
 			
 					String order = (String)JOptionPane.showInputDialog( // creates the selections list
 							null, 
@@ -39,31 +31,14 @@ public class MenuOne {
 							null, // if no selection is made
 							selections,
 							"Porridge");
-		
-	/*
-					Object[] sides = {"extra porridge", "Steamed Vegetables", "Baked Potato Spuds", "Soup", "Salad", "Soup and Salad", "no sides"};
-		
-					String extras = (String)JOptionPane.showInputDialog( // creates the sides list
-							null,
-							"Please select a side:\n"
-							+ "~* Menu *~",
-							"Ye Olde Cafe", // title of Menu
-							JOptionPane.PLAIN_MESSAGE, // creates the dialog box
-							null,
-							sides,
-							" and extra porridge");
-		**/
+					{if (countgame < 3){
+						countgame = countgame + 1;
+	
 			try
 			{
 			outFileStream = new FileOutputStream(myoutfile); // creates new outFile
 			PrintWriter outStream = new PrintWriter(outFileStream); // creates PrintWriter to write to file
 			
-			/*	// Create a message displaying the order	
-				String message = String.format("You have selected %s.", beverage +", " + order +", and "+ extras);
-				outStream.println("The user selected " +beverage+", "+order+", and "+extras+ ".");		
-				// display the message
-				JOptionPane.showMessageDialog(null,  message); 
-			**/
 				
 				// Create a message displaying the order	
 				String message = String.format("You have selected %s.", order);
@@ -71,10 +46,6 @@ public class MenuOne {
 				// display the message
 				JOptionPane.showMessageDialog(null,  message); 
 
-				
-				
-				
-				
 				outStream.close();
 			}
 			catch(FileNotFoundException e){
@@ -83,4 +54,6 @@ public class MenuOne {
 			}
 				}
 					}
-						}
+						} while(countgame < 3);
+							}
+								}}
